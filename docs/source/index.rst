@@ -12,10 +12,8 @@ SAÉ 15 - Traiter des données
 
 
 
-   :caption: Objectifs et cahiers des charges
 
    content/objectifs
-   content/cahier_des_charges
    content/code
 
 

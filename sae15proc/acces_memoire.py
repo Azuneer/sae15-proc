@@ -20,7 +20,7 @@ def extraire_info_memoire(chemin_fichier):
     
     .. code-block:: python
      
-     memoire = extraire_info_memoire("/proc/meminfo"
+     memoire = extraire_info_memoire("/proc/meminfo")
 
     """
     try:

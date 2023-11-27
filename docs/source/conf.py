@@ -6,9 +6,6 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-import acces_memoire
-acces_memoire.path.insert(0, os.path.abspath("."))
-
 project = 'sae15-proc'
 copyright = '2023, Ewen GADONNAUD Theo BRUNEAU'
 author = 'Ewen GADONNAUD Theo BRUNEAU'

@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+a{
+none;
+}
+
+/* Généralités*/
+body {
+	background:
+	none;
+}
+
+/*Bandeau de la page*/
+header{
+	none;
+}
+
+header h1{
+	font-size:3em;
+}
+header h2{
+	font-size:2em;
+}
+
+/*Zone principale*/
+article{
+	margin:2%;
+	margin-left:20%;
+	margin-right:20%;
+	padding:10px;
+	border-radius:10px;
+	background:#ddd;
+}
+
+article h2{
+	text-transform:Capitalize;
+}
+
+/*Bruneau Theo Gadonneau Ewain*/

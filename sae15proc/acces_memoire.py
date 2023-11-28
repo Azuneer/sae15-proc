@@ -49,6 +49,3 @@ def extraire_info_memoire(chemin_fichier):
     except PermissionError:
         print(f"Permission refusée pour accéder au fichier {chemin_fichier}.")
 
-#utilisation pour le fichier /proc/meminfo
-chemin_meminfo = '/proc/meminfo'
-extraire_info_memoire(chemin_meminfo)

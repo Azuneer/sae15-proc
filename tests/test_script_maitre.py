@@ -1,3 +1,3 @@
-import essais_acces
+import acces_memoire
 
-essais_acces.extraire_info_memoire("/proc/meminfo")
+acces_memoire.extraire_info_memoire("/proc/meminfo")

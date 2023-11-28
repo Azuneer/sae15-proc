@@ -10,13 +10,8 @@ SAÉ 15 - Traiter des données
    :maxdepth: 1
    :caption: Objectif général de la SAÉ
 
-
-
-
    content/objectifs
    content/code
-
-
 
 Indices and tables
 ==================

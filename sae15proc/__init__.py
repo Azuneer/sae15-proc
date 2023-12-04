@@ -5,3 +5,4 @@
 """
 
 import acces_memoire
+import acces_disque_total

@@ -66,6 +66,34 @@
 </dd></dl>
 
 </section>
+<section id="module-sae15proc.acces_disque_total">
+<span id="module-d-acces-a-la-taille-totale-du-disque"></span><h2>Module d’accès à la taille totale du disque<a class="headerlink" href="#module-sae15proc.acces_disque_total" title="Lien permanent vers cette rubrique">¶</a></h2>
+<span class="target" id="module-acces_disque_total"></span><dl class="py function">
+<dt class="sig sig-object py" id="sae15proc.acces_disque_total.extraire_info_disque">
+<span class="sig-prename descclassname"><span class="pre">sae15proc.acces_disque_total.</span></span><span class="sig-name descname"><span class="pre">extraire_info_disque</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chemin_fichier</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sae15proc/acces_disque_total.html#extraire_info_disque"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sae15proc.acces_disque_total.extraire_info_disque" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Fonction qui permets d’extraire la taille totale du disque dur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>chemin_fichier</strong> (<em>str</em>) – chemin du fichier /proc/partitions</p>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>la taille totale du disque</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p>TypeError</p>
+</dd>
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">taille_totale</span> <span class="o">=</span> <span class="n">extraire_info_disque</span><span class="p">(</span><span class="s2">&quot;/proc/partitions&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
 </section>
 
 

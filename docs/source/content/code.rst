@@ -16,4 +16,10 @@ Module d'accès à la taille totale du disque
 .. automodule:: sae15proc.acces_disque_total
    :members:
 
+Module d'accès aux interfaces réseaux
+=====================================
+
+.. automodule:: sae15proc.carte_reseaux
+   :members:
+
 

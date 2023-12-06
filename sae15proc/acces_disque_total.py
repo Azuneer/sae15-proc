@@ -10,16 +10,16 @@ import re
 
 def extraire_info_disque(chemin_fichier):
     """ Fonction qui permets d'extraire la taille totale du disque dur
-    
+
     :param chemin_fichier: chemin du fichier /proc/partitions
     :type chemin_fichier: str
     :returns: la taille totale du disque
     :rtype: float
     :raises: TypeError
     :example:
-    
+
     .. code-block:: python
-     
+
      taille_totale = extraire_info_disque("/proc/partitions")
 
     """
@@ -27,18 +27,18 @@ def extraire_info_disque(chemin_fichier):
     try:
         #Lecture du fichier /proc/partitions
         with open(chemin_fichier, 'r') as f:
-            partitions_content = f.read()
-        
-        #Utilisation des expressions régulières pour faire correspondre les infos recherchées 
-        correspondance = re.search(r'\s+\d+\s+\d+\s+(\d+)\s+.*', partitions_content)
-        
+            contenu_partitions = f.read()
+
+        #Utilisation des expressions régulières pour faire correspondre les infos recherchées
+        correspondance = re.search(r'\s+\d+\s+\d+\s+(\d+)\s+.*', contenu_partitions)
+
         if correspondance:
             taille_totale = (int(correspondance.group(1)) / (1024 * 1024)) #taille en GB, non arrondie
             return taille_totale
         else:
             print("Impossible de récupérer la taille totale du disque")
             return None
-        
+
     # On capture les deux types d'exceptions
     except FileNotFoundError:
         print("Le fichier /proc/partitions n'a pas été trouvé.")
@@ -46,5 +46,5 @@ def extraire_info_disque(chemin_fichier):
     except Exception as e:
         print(f"Une erreur s'est produite : {str(e)}")
         return None
-            
+
 print(extraire_info_disque("/proc/partitions"))

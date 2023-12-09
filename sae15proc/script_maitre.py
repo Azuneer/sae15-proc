@@ -17,10 +17,10 @@ print("\nInformations sur le disque:")
 print(infos_disque)
 
 print("\nInformations sur la mémoire:")
-print(infos_memoire)
+print("Mémoire totale :",infos_memoire[0],"Mo","\nMémoire libre :",infos_memoire[1],"Mo")
 
 print("\nInformations sur le système Linux:")
 print(infos_systeme)
 
-print("\nInformations sur les cartes réseau:")
-print(infos_cartes_reseaux)
+print("\nInformations sur les cartes réseau actives:")
+print(infos_cartes_reseaux[0])

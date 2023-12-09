@@ -8,7 +8,7 @@
 
 import re
 
-def extraire_info_linux():
+def extraire_info_linux(chemin_fichier):
     """ Fonction qui permets d'extraire la version du kernel Linux et son architecture
     
     :param chemin_fichier: chemin du fichier /proc/version
@@ -24,7 +24,7 @@ def extraire_info_linux():
 
     """
     try:
-        with open('/proc/version', 'r') as f:
+        with open(chemin_fichier, 'r') as f:
             version_info = f.read()
 
             version_recherche = re.compile(r'Linux version ([^\s]+) .*?\((.*?)\)')

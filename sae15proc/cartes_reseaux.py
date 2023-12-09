@@ -8,7 +8,7 @@
 
 import re
 
-def obtenir_interfaces_reseau():
+def obtenir_interfaces_reseau(chemin_fichier):
     """ Fonction qui permets d'extraire les interfaces réseaux présentes sur le système
     
     :param chemin_fichier: chemin du fichier /proc/net/dev
@@ -24,7 +24,7 @@ def obtenir_interfaces_reseau():
     """
     interfaces = []
     try:
-        with open('/proc/net/dev', 'r') as f:
+        with open(chemin_fichier,'r') as f:
             network_info = f.read()
 
         interfaces_match = re.findall(r'(\w+):\s+\d+', network_info)

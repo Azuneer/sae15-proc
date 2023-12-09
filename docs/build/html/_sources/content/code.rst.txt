@@ -22,4 +22,10 @@ Module d'accès aux interfaces réseaux
 .. automodule:: sae15proc.cartes_reseaux
    :members:
 
+Module d'accès à la version du kernel Linux & archi
+===================================================
+
+.. automodule:: sae15proc.acces_systeme
+   :members:
+
 

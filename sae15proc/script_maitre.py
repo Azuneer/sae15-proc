@@ -11,7 +11,7 @@ infos_cartes_reseaux = sae15_biblio.cartes_reseaux.obtenir_interfaces_reseau("/p
 
 # On affiche le contenu des variables (test).
 print("Informations sur le CPU:")
-print(infos_cpu)
+print(infos_cpu) 
 
 print("\nInformations sur le disque:")
 print(infos_disque)

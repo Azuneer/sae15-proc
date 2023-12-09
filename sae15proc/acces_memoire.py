@@ -36,13 +36,10 @@ def extraire_info_memoire(chemin_fichier):
             match_libre = pattern_libre.search(contenu)
 
             # Affichage des résultats
-            if match_total:
+            if match_total and match_libre:
                 total_memory = int(match_total.group(1)) / 1024  # Convertir en mégaoctets
-                print(total_memory)
-
-            if match_libre:
                 free_memory = int(match_libre.group(1)) / 1024  # Convertir en mégaoctets
-                print(free_memory)
+                return (total_memory,free_memory)
 
     except FileNotFoundError:
         print(f"Le fichier {chemin_fichier} n'existe pas.")

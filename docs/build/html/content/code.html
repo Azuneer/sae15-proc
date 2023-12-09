@@ -98,7 +98,7 @@
 <span id="module-d-acces-aux-interfaces-reseaux"></span><h2>Module d’accès aux interfaces réseaux<a class="headerlink" href="#module-sae15proc.cartes_reseaux" title="Lien permanent vers cette rubrique">¶</a></h2>
 <span class="target" id="module-cartes_reseaux"></span><dl class="py function">
 <dt class="sig sig-object py" id="sae15proc.cartes_reseaux.obtenir_interfaces_reseau">
-<span class="sig-prename descclassname"><span class="pre">sae15proc.cartes_reseaux.</span></span><span class="sig-name descname"><span class="pre">obtenir_interfaces_reseau</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sae15proc/cartes_reseaux.html#obtenir_interfaces_reseau"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sae15proc.cartes_reseaux.obtenir_interfaces_reseau" title="Lien permanent vers cette définition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sae15proc.cartes_reseaux.</span></span><span class="sig-name descname"><span class="pre">obtenir_interfaces_reseau</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chemin_fichier</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sae15proc/cartes_reseaux.html#obtenir_interfaces_reseau"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sae15proc.cartes_reseaux.obtenir_interfaces_reseau" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui permets d’extraire les interfaces réseaux présentes sur le système</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres<span class="colon">:</span></dt>
@@ -126,7 +126,7 @@
 <span id="module-d-acces-a-la-version-du-kernel-linux-archi"></span><h2>Module d’accès à la version du kernel Linux &amp; archi<a class="headerlink" href="#module-sae15proc.acces_systeme" title="Lien permanent vers cette rubrique">¶</a></h2>
 <span class="target" id="module-acces_systeme"></span><dl class="py function">
 <dt class="sig sig-object py" id="sae15proc.acces_systeme.extraire_info_linux">
-<span class="sig-prename descclassname"><span class="pre">sae15proc.acces_systeme.</span></span><span class="sig-name descname"><span class="pre">extraire_info_linux</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sae15proc/acces_systeme.html#extraire_info_linux"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sae15proc.acces_systeme.extraire_info_linux" title="Lien permanent vers cette définition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sae15proc.acces_systeme.</span></span><span class="sig-name descname"><span class="pre">extraire_info_linux</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chemin_fichier</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sae15proc/acces_systeme.html#extraire_info_linux"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sae15proc.acces_systeme.extraire_info_linux" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui permets d’extraire la version du kernel Linux et son architecture</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres<span class="colon">:</span></dt>
@@ -145,6 +145,34 @@
 <dd class="field-odd"><p></p></dd>
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">systeme_version</span> <span class="o">=</span> <span class="n">extraire_info_linux</span><span class="p">(</span><span class="s2">&quot;/proc/version&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-sae15proc.acces_cpu">
+<span id="module-d-acces-aux-informations-cpu"></span><h2>Module d’accès aux informations CPU<a class="headerlink" href="#module-sae15proc.acces_cpu" title="Lien permanent vers cette rubrique">¶</a></h2>
+<span class="target" id="module-acces_cpu"></span><dl class="py function">
+<dt class="sig sig-object py" id="sae15proc.acces_cpu.extraire_info_cpu">
+<span class="sig-prename descclassname"><span class="pre">sae15proc.acces_cpu.</span></span><span class="sig-name descname"><span class="pre">extraire_info_cpu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chemin_fichier</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sae15proc/acces_cpu.html#extraire_info_cpu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sae15proc.acces_cpu.extraire_info_cpu" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Fonction qui permets d’extraire des informations sur le/les CPU(s) (modèle du CPU, sa fréquence et la taille de son cache)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>chemin_fichier</strong> (<em>str</em>) – chemin du fichier /proc/cpuinfo</p>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>la mémoire totale et la mémoire libre.</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str, int, float</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p>TypeError</p>
+</dd>
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cpu_infos</span> <span class="o">=</span> <span class="n">extraire_info_cpu</span><span class="p">(</span><span class="s2">&quot;/proc/cpuinfo&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -169,7 +197,6 @@
 
 
 <h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Objectif général de la SAÉ</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="objectifs.html">Objectifs</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Documentation du code</a></li>

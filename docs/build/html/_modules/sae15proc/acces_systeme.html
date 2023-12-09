@@ -44,7 +44,7 @@
 
 <span class="kn">import</span> <span class="nn">re</span>
 
-<div class="viewcode-block" id="extraire_info_linux"><a class="viewcode-back" href="../../content/code.html#sae15proc.acces_systeme.extraire_info_linux">[docs]</a><span class="k">def</span> <span class="nf">extraire_info_linux</span><span class="p">():</span>
+<div class="viewcode-block" id="extraire_info_linux"><a class="viewcode-back" href="../../content/code.html#sae15proc.acces_systeme.extraire_info_linux">[docs]</a><span class="k">def</span> <span class="nf">extraire_info_linux</span><span class="p">(</span><span class="n">chemin_fichier</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Fonction qui permets d&#39;extraire la version du kernel Linux et son architecture</span>
 <span class="sd">    </span>
 <span class="sd">    :param chemin_fichier: chemin du fichier /proc/version</span>
@@ -60,7 +60,7 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/proc/version&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">chemin_fichier</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="n">version_info</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
             <span class="n">version_recherche</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Linux version ([^\s]+) .*?\((.*?)\)&#39;</span><span class="p">)</span>
@@ -94,7 +94,6 @@
 
 
 <h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Objectif général de la SAÉ</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../content/objectifs.html">Objectifs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../content/code.html">Documentation du code</a></li>

@@ -28,4 +28,10 @@ Module d'accès à la version du kernel Linux & archi
 .. automodule:: sae15proc.acces_systeme
    :members:
 
+Module d'accès aux informations CPU
+===================================
+
+.. automodule:: sae15proc.acces_cpu
+   :members:
+
 

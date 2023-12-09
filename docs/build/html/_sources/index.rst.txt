@@ -8,7 +8,6 @@ SAÉ 15 - Traiter des données
 
 .. toctree::
    :maxdepth: 1
-   :caption: Objectif général de la SAÉ
 
    content/objectifs
    content/code

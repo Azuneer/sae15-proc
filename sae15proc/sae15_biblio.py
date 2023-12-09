@@ -3,3 +3,5 @@
 import acces_disque_total
 import acces_memoire
 import cartes_reseaux
+import acces_cpu
+

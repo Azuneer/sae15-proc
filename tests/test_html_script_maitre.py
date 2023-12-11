@@ -54,9 +54,9 @@ def main():
         <p>information sur l'utilisation du disque de la machine:{infos_disque}<br>{infos_disque_util}</p>
         <p>information sur l'OS de la machine:{infos_systeme}</p>
         <p>information sur l'utilisation de la mémoire de la machine:
-        <br>{infos_memoire[0]}Mo
-        <br>{infos_memoire[1]}Mo</p>
-        <p>information sur le(s) carte(s) réseau(x) de la machine:{infos_cartes_reseaux}</p>
+        <br>Mémoire total:{infos_memoire[0]}Mo
+        <br>Mémoire utilisée:{infos_memoire[1]}Mo</p>
+        <p>Nom de(s) carte(s) réseau(x) de la machine:{infos_cartes_reseaux}</p>
         <p>information sur le(s) carte(s) graphique(s) de la machine:</p>
 
         </body>

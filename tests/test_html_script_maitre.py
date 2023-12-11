@@ -41,18 +41,18 @@ def main():
         <!DOCTYPE html>
         <html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"fr\" lang=\"fr\" dir=\"ltr\">
         <style>
-        table, th, td {
+        table, th, td {{
         border:1px solid black;
-        }
+        }}
         </style>
         <head>
         <title>{titre_page}</title>
         </head>
         <body>
-        Bonjour HTML
+        Test HTML
         </body>
         </html>
-    """.format(titre_page)
+    """.format(titre_page=titre_page)
     genere_page_web("./html_test/compil-proc.html",titre_page,corps)
 
 main()

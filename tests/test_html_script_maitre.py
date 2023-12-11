@@ -5,6 +5,7 @@ import sae15_biblio
 # On récupère les informations grâce au module créé précedemment.
 infos_cpu = sae15_biblio.acces_cpu.extraire_info_cpu("/proc/cpuinfo")
 infos_disque = sae15_biblio.acces_disque_total.extraire_info_disque("/proc/partitions")
+infos_disque_util = sae15_biblio.acces_disque_util.extraire_info_disque_utilise()
 infos_memoire = sae15_biblio.acces_memoire.extraire_info_memoire("/proc/meminfo")
 infos_systeme= sae15_biblio.acces_systeme.extraire_info_linux()
 infos_cartes_reseaux = sae15_biblio.cartes_reseaux.obtenir_interfaces_reseau()
@@ -22,7 +23,7 @@ print("Mémoire totale :",infos_memoire[0],"Mo","\nMémoire libre :",infos_memoi
 print("\nInformations sur le système Linux:")
 print(infos_systeme)
 
-print("\nInformations sur les cartes réseau actives:")
+print("\nInformations sur la carte réseau active:")
 print(infos_cartes_reseaux[0])
 
 def genere_page_web(nom_du_fichier,titre_page,corps):
@@ -49,10 +50,18 @@ def main():
         <title>{titre_page}</title>
         </head>
         <body>
-        Test HTML
+        <p>information sur le processeur de la machine:{infos_cpu}</p>
+        <p>information sur l'utilisation du disque de la machine:{infos_disque}<br>{infos_disque_util}</p>
+        <p>information sur l'OS de la machine:{infos_systeme}</p>
+        <p>information sur l'utilisation de la mémoire de la machine:
+        <br>{infos_memoire[0]}Mo
+        <br>{infos_memoire[1]}Mo</p>
+        <p>information sur le(s) carte(s) réseau(x) de la machine:{infos_cartes_reseaux}</p>
+        <p>information sur le(s) carte(s) graphique(s) de la machine:</p>
+
         </body>
         </html>
-    """.format(titre_page=titre_page)
+    """.format(titre_page=titre_page,infos_cpu=infos_cpu,infos_disque=infos_disque,infos_disque_util=infos_disque_util,infos_systeme=infos_systeme,infos_memoire=infos_memoire,infos_cartes_reseaux=infos_cartes_reseaux)
     genere_page_web("./html_test/compil-proc.html",titre_page,corps)
 
 main()

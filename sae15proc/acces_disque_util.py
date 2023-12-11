@@ -31,5 +31,3 @@ def extraire_info_disque_utilise(chemin_fichier):
     except Exception as e:
         print(f"Une erreur s'est produite : {str(e)}")
         return None
-
-print(extraire_info_disque_utilise())

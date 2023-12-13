@@ -33,7 +33,7 @@ def extraire_info_disque(chemin_fichier):
         correspondance = re.search(r'\s+\d+\s+\d+\s+(\d+)\s+.*', partitions_content)
         
         if correspondance:
-            taille_totale = (int(correspondance.group(1)) / (1024 * 1024)) #taille en GB, non arrondie
+            taille_totale = round((int(correspondance.group(1)) / (1024 ** 2)),2) #taille en GB, arrondie avec la fonction round()
             return taille_totale
         else:
             print("Impossible de récupérer la taille totale du disque")

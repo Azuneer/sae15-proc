@@ -36,7 +36,7 @@ def extraire_info_cpu(chemin_fichier):
             cpu_type = type_correspondance.group(1)
             cpu_frequence = float(frequence_correspondance.group(1))
             cache_taille = int(cache_correspondance.group(1))
-            return f"CPU Type: {cpu_type}, Fréquence: {cpu_frequence} MHz, Taille du cache: {cache_taille} KB" #Pas besoin de formatter les informations, elles le sont déjà sous le bon format
+            return f"CPU Type: {cpu_type}, Fréquence actuelle: {cpu_frequence} MHz, Taille du cache: {cache_taille} KB" #Pas besoin de formatter les informations, elles le sont déjà sous le bon format
         else:
             print("Impossible de récupérer les informations sur le CPU.")
             return None

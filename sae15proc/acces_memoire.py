@@ -37,8 +37,8 @@ def extraire_info_memoire(chemin_fichier):
 
             # Affichage des résultats
             if match_total and match_libre:
-                total_memory = int(match_total.group(1)) / 1024  # Convertir en mégaoctets
-                free_memory = int(match_libre.group(1)) / 1024  # Convertir en mégaoctets
+                total_memory = round(int(match_total.group(1)) / 1024**2, 2)  # Convertir en gigaoctets, arrondis
+                free_memory = round(int(match_libre.group(1)) / 1024,2)  # Convertir en mégaoctets, arrondis
                 return (total_memory,free_memory)
 
     except FileNotFoundError:

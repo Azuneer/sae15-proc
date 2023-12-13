@@ -39,15 +39,19 @@ def main():
         <head>
         <title>{titre_page}</title>
         </head>
+        <header>
+        <h1>Page de compilation des données contenue dans le dossier /proc de Linux
+        </h1>
+        </header>
         <body>
-        <p>Information sur le processeur de la machine:  <br>{infos_cpu}</p>
-        <p>Information sur l'utilisation du disque de la machine : <br>Taille totale du disque : {infos_disque} Go<br>Utilisation du disque : {infos_disque_util} Go</p>
-        <p>Information sur l'OS de la machine : {infos_systeme}</p>
-        <p>Information sur la mémoire de la machine:
-        <br>Mémoire totale : {infos_memoire[0]} Go
-        <br>Mémoire libre : {infos_memoire[1]} Mo</p>
-        <p>Nom de(s) carte(s) réseau(x) de la machine : {infos_cartes_reseaux[0]}</p>
-        <p>Information sur le(s) carte(s) graphique(s) de la machine : </p>
+        <h3>Information sur le processeur de la machine:</h3>  <p>{infos_cpu}</p>
+        <h3>Information sur l'utilisation du disque de la machine :</h3><h4>Taille totale du disque :</h4><p> {infos_disque} Go</p><h4>Utilisation du disque :</h4> <p>{infos_disque_util} Go</p>
+        <h3>Information sur l'OS de la machine :</h3><p> {infos_systeme}</p>
+        <h3>Information sur la mémoire de la machine:</h3>
+        <h4>Mémoire totale :</h4> <p>{infos_memoire[0]} Go</p>
+        <h4>Mémoire libre :</h4> <p>{infos_memoire[1]} Mo</p>
+        <h3>Nom de(s) carte(s) réseau(x) de la machine :</h3> <p>{infos_cartes_reseaux[0]}</p>
+        <h3>Information sur le(s) carte(s) graphique(s) de la machine : </h3>
         <p>-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
         <p> Nombre de processus actifs sur la machine : {processus}<p>
         <p> Temps total depuis que le serveur est lancé : {uptime}<p>

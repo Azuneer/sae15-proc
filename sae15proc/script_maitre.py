@@ -1,5 +1,4 @@
 import os
-import subprocess
 import sae15_biblio
 
 # On récupère les informations grâce au module créé précedemment (partie résumé materiel).

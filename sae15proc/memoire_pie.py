@@ -41,6 +41,3 @@ def memoire_pie():
     
     # On sauvegarde la figure et on l'affiche à l'écran (test)
     plt.savefig("plots/camembert_memoire.png") #sauvegarde dans le dossier plots
-    plt.show() #affichage du graphique
-
-    

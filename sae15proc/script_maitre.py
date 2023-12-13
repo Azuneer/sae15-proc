@@ -1,3 +1,11 @@
+"""
+.. module:: script_maitre
+  :platform: Unix, windows
+  :synopsis: programme maitre, qui génère la page et récupère les informations du PC grâce au différents modules
+
+.. moduleauthor:: GADONNAUD Ewen <ewen.gadonnaud@etu.univ-poitiers.fr> & BRUNEAU Théo <theo.bruneau@etu.univ-poitiers.fr>
+"""
+
 import os
 import sae15_biblio
 
@@ -15,7 +23,6 @@ processus = int(processus.strip()) - 1 #on soustrait l'entête
 uptime = os.popen('uptime -p').read().strip() #stock l'uptime de la machine dans la variable uptime
 ports_ouverts = os.popen('netstat -tuln').read().strip() #stock les ports UDP/TCP ouverts dans la variable ports_ouverts
 
-
 def genere_page_web(nom_du_fichier,corps):
     try:
         f = open(nom_du_fichier,'w',encoding='utf-8')
@@ -26,6 +33,7 @@ def genere_page_web(nom_du_fichier,corps):
         f.close()
 
 def main():
+    sae15_biblio.memoire_pie.memoire_pie() # exécute la génération du diagramme à chaque appel de la fonction main()
     titre_page = "Compil page"
     corps = """
             <?xml version=\"1.0\" encoding=\"UTF-8\" ?>
@@ -52,9 +60,13 @@ def main():
         <p>-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
         <p> Nombre de processus actifs sur la machine : {processus}<p>
         <p> Temps total depuis que le serveur est lancé : {uptime}<p>
+        <p> Ports UDP/TCP ouverts : {ports_ouverts} </p>
+        <p>-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+        <p> Graphique camembert représentant l'utilisation de la mémoire actuelle : <p>
+        <img src="../sae15proc/plots/camembert_memoire.png">
         </body>
         </html>
-    """.format(titre_page=titre_page,infos_cpu=infos_cpu,infos_disque=infos_disque,infos_disque_util=infos_disque_util,infos_systeme=infos_systeme,infos_memoire=infos_memoire,infos_cartes_reseaux=infos_cartes_reseaux,processus=processus,uptime=uptime)
+    """.format(titre_page=titre_page,infos_cpu=infos_cpu,infos_disque=infos_disque,infos_disque_util=infos_disque_util,infos_systeme=infos_systeme,infos_memoire=infos_memoire,infos_cartes_reseaux=infos_cartes_reseaux,processus=processus,uptime=uptime,ports_ouverts=ports_ouverts)
     genere_page_web("../html/compil-proc.html",corps)
     os.system("firefox file://" + os.path.abspath("../html/compil-proc.html")) #ouvre la page sur Firefox après la génération de cette dernière
 

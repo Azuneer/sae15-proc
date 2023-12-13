@@ -1,7 +1,25 @@
+"""
+.. module:: memoire_pie
+  :platform: Unix, windows
+  :synopsis: script de génération du graphique de la mémoire
+
+.. moduleauthor:: GADONNAUD Ewen <ewen.gadonnaud@etu.univ-poitiers.fr> & BRUNEAU Théo <theo.bruneau@etu.univ-poitiers.fr>
+"""
+
 import sae15_biblio
 import matplotlib.pyplot as plt
 
 def memoire_pie():
+    """ Fonction qui permets de calculer les pourcentages et de générer le graphique camembert qui est sauvegardé dans le répertoire plots/
+
+    :returns: affiche le diagramme
+    :example:
+
+    .. code-block:: python
+
+    memoire_pie()
+
+    """
     # On calcule les grandeurs en premier lieu
     memoire = sae15_biblio.acces_memoire.extraire_info_memoire("/proc/meminfo") # la variable memoire est un couple
     memoire_totale = memoire[0] * 1024 # On transforme en MB pour avoir les mêmes dimensions

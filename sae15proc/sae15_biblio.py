@@ -6,4 +6,4 @@ import acces_memoire
 import acces_systeme
 import cartes_reseaux
 import acces_cpu
-
+import memoire_pie

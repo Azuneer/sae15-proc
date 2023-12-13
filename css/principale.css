@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+/* Généralités pour toute la page
+------------------------------------------------------------------------*/
+/* Bandeau de la page
+------------------------------------------------------------------------*/
+header {
+	
+	margin-left:10%;
+	margin-right:10%;
+	padding-bottom:30px;
+	text-align:center;
+	color:grey;
+	background-color:black;
+	font-family:Arial,sans-serif;
+   border-radius:15px;
+}
+body h1 {
+	font-size:3em;
+	}
+/* Généralité pour les titre contenu dans le body
+------------------------------------------------------------------------*/
+body h3 {
+	font-size:1.5em;
+}
+body h4 {
+	font-size:1em;
+}

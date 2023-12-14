@@ -34,6 +34,7 @@ def genere_page_web(nom_du_fichier,corps):
 
 def main():
     sae15_biblio.memoire_pie.memoire_pie() # exécute la génération du diagramme à chaque appel de la fonction main()
+    sae15_biblio.disque_pie.disque_pie()
     titre_page = "Compil page"
     corps = """
             <?xml version=\"1.0\" encoding=\"UTF-8\" ?>
@@ -64,6 +65,8 @@ def main():
         <p>-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
         <p> Graphique camembert représentant l'utilisation de la mémoire actuelle : <p>
         <img src="../sae15proc/plots/camembert_memoire.png">
+        <p> Graphique camembert représentant l'utilisation du disque <p>
+        <img src="../sae15proc/plots/camembert_disque.png">
         </body>
         </html>
     """.format(titre_page=titre_page,infos_cpu=infos_cpu,infos_disque=infos_disque,infos_disque_util=infos_disque_util,infos_systeme=infos_systeme,infos_memoire=infos_memoire,infos_cartes_reseaux=infos_cartes_reseaux,processus=processus,uptime=uptime,ports_ouverts=ports_ouverts)

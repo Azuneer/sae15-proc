@@ -26,11 +26,11 @@ def memoire_pie():
     memoire_libre = memoire[1]
     memoire_util = memoire_totale - memoire_libre # valeur de la memoire utilisée en MB
     pourcentage_util = (memoire_util/memoire_totale) * 100 # pourcentage de la mémoire utilisée 
-    pourcentage_libre = 100 - pourcentage_util
+    pourcentage_total = 100 - pourcentage_util
     
     # On passe à l'établissement des paramètres du graphique camembert
-    titres = ["Mémoire utilisée", "Mémoire libre"] # les titres des grandeurs
-    grandeurs = [pourcentage_util, pourcentage_libre] # association des grandeurs au titres
+    titres = ["Mémoire utilisée", "Mémoire totale"] # les titres des grandeurs
+    grandeurs = [pourcentage_total, pourcentage_util] # association des grandeurs au titres
     couleurs = ['#ff9999', '#66b3ff'] # les couleurs des grandeurs
     explode = (0.1,0) #permets de mettre en valeur la première slice du graphique, séparant bien les deux grandeurs
     

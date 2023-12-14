@@ -41,3 +41,5 @@ def disque_pie():
     
     # On sauvegarde la figure et on l'affiche à l'écran (test)
     plt.savefig("plots/camembert_disque.png") #sauvegarde dans le dossier plots
+    plt.clf()
+

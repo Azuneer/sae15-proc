@@ -39,7 +39,8 @@ def extraire_info_memoire(chemin_fichier):
             if match_total and match_libre:
                 total_memory = round(int(match_total.group(1)) / 1024**2, 2)  # Convertir en gigaoctets, arrondis
                 free_memory = round(int(match_libre.group(1)) / 1024,2)  # Convertir en mégaoctets, arrondis
-                return (total_memory,free_memory)
+                used_memory = round(total_memory * 1024 - free_memory,2)
+                return (total_memory,free_memory,used_memory)
 
     except FileNotFoundError:
         print(f"Le fichier {chemin_fichier} n'existe pas.")

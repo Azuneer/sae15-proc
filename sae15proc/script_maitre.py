@@ -33,8 +33,8 @@ def genere_page_web(nom_du_fichier,corps):
         f.close()
 
 def main():
-    sae15_biblio.memoire_pie.memoire_pie() # exécute la génération du diagramme à chaque appel de la fonction main()
     sae15_biblio.disque_pie.disque_pie()
+    sae15_biblio.memoire_pie.memoire_pie() # exécute la génération du diagramme à chaque appel de la fonction main()
     titre_page = "Compil page"
     corps = """
             <?xml version=\"1.0\" encoding=\"UTF-8\" ?>
@@ -55,6 +55,7 @@ def main():
         <h3>Information sur l'OS de la machine :</h3><p> {infos_systeme}</p>
         <h3>Information sur la mémoire de la machine:</h3>
         <h4>Mémoire totale :</h4> <p>{infos_memoire[0]} Go</p>
+        <h4>Mémoire utilisée :</h4> <p>{infos_memoire[2]} Mo</p>
         <h4>Mémoire libre :</h4> <p>{infos_memoire[1]} Mo</p>
         <h3>Nom de(s) carte(s) réseau(x) de la machine :</h3> <p>{infos_cartes_reseaux[0]}</p>
         <h3>Information sur le(s) carte(s) graphique(s) de la machine : </h3>

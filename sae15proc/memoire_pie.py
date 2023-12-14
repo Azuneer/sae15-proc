@@ -41,3 +41,5 @@ def memoire_pie():
     
     # On sauvegarde la figure et on l'affiche à l'écran (test)
     plt.savefig("plots/camembert_memoire.png") #sauvegarde dans le dossier plots
+    plt.clf() #on doit réinitialiser la figure pour pas que l'une empiètte sur l'autre lors de la génération successive.
+

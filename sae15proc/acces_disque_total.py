@@ -30,7 +30,7 @@ def extraire_info_disque(chemin_fichier):
             contenu_partitions = f.read()
 
         #Utilisation des expressions régulières pour faire correspondre les infos recherchées
-        correspondance = re.search(r'\s+\d+\s+\d+\s+(\d+)\s+.*', contenu_partitions)
+        correspondance = re.search(r'\s+\d+\s+\d+\s+(\d+)\s+([sh]d[a-z]*)', contenu_partitions)
 
         if correspondance:
             taille_totale = round(int(correspondance.group(1)) / (1024 * 1024),2) #taille en GB, arrondie avec la fonction round()

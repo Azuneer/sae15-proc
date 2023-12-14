@@ -30,7 +30,7 @@ def memoire_pie():
     
     # On passe à l'établissement des paramètres du graphique camembert
     titres = ["Mémoire utilisée", "Mémoire totale"] # les titres des grandeurs
-    grandeurs = [pourcentage_total, pourcentage_util] # association des grandeurs au titres
+    grandeurs = [pourcentage_util, pourcentage_total] # association des grandeurs au titres
     couleurs = ['#ff9999', '#66b3ff'] # les couleurs des grandeurs
     explode = (0.1,0) #permets de mettre en valeur la première slice du graphique, séparant bien les deux grandeurs
     

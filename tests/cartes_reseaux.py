@@ -19,3 +19,5 @@ def obtenir_interfaces_reseau():
         print(f"Une erreur s'est produite : {str(e)}")
 
     return interfaces
+
+print(obtenir_interfaces_reseau())

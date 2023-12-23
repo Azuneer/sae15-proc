@@ -19,7 +19,7 @@ def obtenir_interfaces_reseau(chemin_fichier):
     
     .. code-block:: python
      
-     interfaces_reseau = obtenir_interfaces_reseau("/proc/net/dev)
+     interfaces_reseau = obtenir_interfaces_reseau("/proc/net/dev")
 
     """
     interfaces = []
@@ -27,10 +27,10 @@ def obtenir_interfaces_reseau(chemin_fichier):
         with open(chemin_fichier,'r') as f:
             network_info = f.read()
 
-        interfaces_match = re.findall(r'(\w+):\s+\d+', network_info)
+        interfaces_match = re.findall(r'(\w+):\s+\d+', network_info) #recherche dans l'entree brute un pattern qui commence par un texte suivi de deux points, un espace et des chiffres
 
         for interface in interfaces_match:
-            if interface != 'lo':
+            if interface != 'lo': #exclusion de la loopback, qui nee nous interesse pas ici
                 interfaces.append(interface)
 
     except FileNotFoundError:

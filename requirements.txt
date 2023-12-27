@@ -1,2 +1,2 @@
 Version python utilisée : Python 3.11.2
-Modules utilisés : os, re, psutils
+Modules utilisés : os, re, psutils, matplotlib

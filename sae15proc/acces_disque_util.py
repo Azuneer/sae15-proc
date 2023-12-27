@@ -24,8 +24,8 @@ def extraire_info_disque_utilise(chemin_fichier):
 
     """
     try:
-        informations = psutil.disk_usage(chemin_fichier)
-        taille_utilisee = round(informations.used / (1024**3),2)  # Taille utilisée en GB
+        informations = psutil.disk_usage(chemin_fichier) # On utilise la fonction disk_usage du module Psutil pour recuperer l'utilisation du disque principal a l'instant T
+        taille_utilisee = round(informations.used / (1024**3),2)  # Taille utilisée en GB que l'on arrondie a deux chiffres apres la virgule.
         
         return taille_utilisee
     except Exception as e:

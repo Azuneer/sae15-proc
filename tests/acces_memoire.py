@@ -28,11 +28,11 @@ def extraire_info_memoire(chemin_fichier):
             contenu = fichier.read()
 
             # Utilisation de expressions régulières pour extraire des lignes spécifiques
-            pattern_total = re.compile(r'MemTotal:\s+(\d+) kB')
-            pattern_libre = re.compile(r'MemFree:\s+(\d+) kB')
+            pattern_total = re.compile(r'MemTotal:\s+(\d+) kB') # Cherche dans l'entree brute une ligne commencant par "MemTotal:" suivi d'un ou plusieurs espace (\s+) puis d'un ou plusieurs chiffres (\d+)
+            pattern_libre = re.compile(r'MemFree:\s+(\d+) kB') # Pareil ici 
 
             # Recherche des correspondances dans le contenu
-            match_total = pattern_total.search(contenu)
+            match_total = pattern_total.search(contenu) 
             match_libre = pattern_libre.search(contenu)
 
             # Affichage des résultats

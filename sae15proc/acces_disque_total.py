@@ -31,6 +31,16 @@ def extraire_info_disque(chemin_fichier):
 
         #Utilisation des expressions régulières pour faire correspondre les infos recherchées
         correspondance = re.search(r'\s+\d+\s+\d+\s+(\d+)\s+([sh]d[a-z]*)', contenu_partitions)
+        """
+        L'expression reguliere est un peu plus longue ici car on veux capturer un pattern difficile d'acces
+
+        On recherche ici un pattern qui correspond a un espace (\s+), un ou des chiffres (\d+), ainsi de suite
+        jusqu'au premier groupe ou l'on recupere la taille totale qui n'est pas sous une forme lisible.
+
+        La suite de l'expression reguliere permets de specifier le format exact du disque, ici sois un disque commencant par un "s" ou un "h",
+        suivi obligatoirement d'un "d" et suivi d'une lettre de l'alphabet de "a" a "z". On utilise pas de chiffres ici, car c'est un disque tout entier
+        que l'on souhaite capturer, et non pas une partition. Ainsi, on recupere EXACTEMENT un disque et non pas un autre peripherique.
+        """
 
         if correspondance:
             taille_totale = round(int(correspondance.group(1)) / (1024 * 1024),2) #taille en GB, arrondie avec la fonction round()

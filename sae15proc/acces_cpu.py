@@ -28,9 +28,9 @@ def extraire_info_cpu(chemin_fichier):
             contenu_cpuinfo = f.read()
 
         # Utilisation des expressions régulières pour faire correspondre les infos recherchées (modèle,fréquence,cache)
-        type_correspondance = re.search(r'model name\s+:\s+(.*)', contenu_cpuinfo)
-        frequence_correspondance = re.search(r'cpu MHz\s+:\s+([\d.]+)', contenu_cpuinfo)
-        cache_correspondance = re.search(r'cache size\s+:\s+(\d+) KB', contenu_cpuinfo)
+        type_correspondance = re.search(r'model name\s+:\s+(.*)', contenu_cpuinfo) # Recherche une ligne contenant "model name" suivi de deux points et d'un espace (\s+) et capture tout le reste dans un groupe (.*)
+        frequence_correspondance = re.search(r'cpu MHz\s+:\s+([\d.]+)', contenu_cpuinfo) # Pareil, le groupe capture un ou plusieurs chiffres contenant des décimales
+        cache_correspondance = re.search(r'cache size\s+:\s+(\d+) KB', contenu_cpuinfo) # Ici, le groupe capture un ou plusieurs chiffres (\d+)
 
         if type_correspondance and frequence_correspondance and cache_correspondance:
             cpu_type = type_correspondance.group(1)

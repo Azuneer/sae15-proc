@@ -32,7 +32,7 @@ def extraire_info_disque(chemin_fichier):
         #Utilisation des expressions régulières pour faire correspondre les infos recherchées
         correspondance = re.search(r'\s+\d+\s+\d+\s+(\d+)\s+([sh]d[a-z]*)', contenu_partitions)
         """
-        L'expression reguliere est un peu plus longue ici car on veux capturer un pattern difficile d'acces
+        L'expression reguliere est un peu plus longue ici car on veux capturer un pattern "difficile" d'acces
 
         On recherche ici un pattern qui correspond a un espace (\s+), un ou des chiffres (\d+), ainsi de suite
         jusqu'au premier groupe ou l'on recupere la taille totale qui n'est pas sous une forme lisible.

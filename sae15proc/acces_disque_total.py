@@ -30,7 +30,7 @@ def extraire_info_disque(chemin_fichier):
             contenu_partitions = f.read()
 
         #Utilisation des expressions régulières pour faire correspondre les infos recherchées
-        correspondance = re.search(r'\s+\d+\s+\d+\s+(\d+)\s+([sh]d[a-z]*)', contenu_partitions)
+        correspondance = re.search(r'\s+\d+\s+\d+\s+(\d+)\s+[sh]d[a-z]', contenu_partitions)
         """
         L'expression reguliere est un peu plus longue ici car on veux capturer un pattern "difficile" d'acces
 

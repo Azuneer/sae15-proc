@@ -7,7 +7,6 @@
 """
 
 import os
-import sys
 import sae15_biblio
 
 # On récupère les informations grâce au module créé précedemment (partie résumé materiel).
@@ -34,7 +33,6 @@ def genere_page_web(nom_du_fichier,corps):
         f.close()
 
 def main():
-    chemin_gen = sys.argv[1]
     sae15_biblio.disque_pie.disque_pie()
     sae15_biblio.memoire_pie.memoire_pie() # exécute la génération du diagramme à chaque appel de la fonction main()
     titre_page = "Compil page"
@@ -73,8 +71,8 @@ def main():
         </body>
         </html>
     """.format(titre_page=titre_page,infos_cpu=infos_cpu,infos_disque=infos_disque,infos_disque_util=infos_disque_util,infos_systeme=infos_systeme,infos_memoire=infos_memoire,infos_cartes_reseaux=infos_cartes_reseaux,processus=processus,uptime=uptime,ports_ouverts=ports_ouverts)
-    genere_page_web(chemin_gen,corps)
-    os.system("firefox file://" + os.path.abspath(chemin_gen + "compil-proc.html")) #ouvre la page sur Firefox après la génération de cette dernière
+    genere_page_web("../html/compil-proc.html",corps)
+    os.system("firefox file://" + os.path.abspath("../html/compil-proc.html")) #ouvre la page sur Firefox après la génération de cette dernière
 
 if __name__ == "__main__":
     main()

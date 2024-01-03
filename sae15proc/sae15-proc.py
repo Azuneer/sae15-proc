@@ -1,5 +1,5 @@
 """
-.. module:: script_maitre
+.. module:: sae15-proc
   :platform: Unix, windows
   :synopsis: programme maitre, qui génère la page et récupère les informations du PC grâce au différents modules
 

@@ -45,3 +45,9 @@ Graphique cammembert pour le disque
 
 .. automodule:: sae15proc.disque_pie
    :members:
+
+Script maitre
+=============
+
+.. automodule:: sae15proc.sae15-proc
+   :members:

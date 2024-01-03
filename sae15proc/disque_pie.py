@@ -14,18 +14,18 @@ import matplotlib.pyplot as plt
 def disque_pie():
     """ Fonction qui permets de calculer les pourcentages et de générer le graphique camembert qui est sauvegardé dans le répertoire plots/
 
-    :returns: affiche le diagramme
+    :returns: sauvegarde le diagramme de l'utilisation du disque dans le dossier plots/ et efface le cache de matplotlib.
     :example:
 
     .. code-block:: python
 
-    disque_pie()
+     disque_pie()
 
     """
     # On calcule les grandeurs en premier lieu
     taille_totale = sae15_biblio.acces_disque_total.extraire_info_disque("/proc/partitions")
     taille_util = sae15_biblio.acces_disque_util.extraire_info_disque_utilise("/")
-    pourcentage_util = (taille_util/taille_totale) * 100 # pourcentage de la mémoire utilisée 
+    pourcentage_util = (taille_util/taille_totale) * 100 # pourcentage du disque util
     pourcentage_total = 100 - pourcentage_util
     
     # On passe à l'établissement des paramètres du graphique camembert

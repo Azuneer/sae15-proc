@@ -64,6 +64,11 @@
             <span class="n">version_info</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
             <span class="n">version_recherche</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Linux version ([^\s]+) .*?\((.*?)\)&#39;</span><span class="p">)</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Le premier groupe de capture corresponds a la version du noyeau Linux qui correspond a une sequence de caractere qui ne sont</span>
+<span class="sd">            pas des espaces ([^\s]+) suivi d&#39;un point, jusqu&#39;au second groupe qui correspond a l&#39;architecture qui est entre parentheses. </span>
+<span class="sd">            (l&#39;utilisation des barres obliques corresponds exprime que nous cherchons ce qui est &quot;litteralement&quot; entre parentheses)</span>
+<span class="sd">            &quot;&quot;&quot;</span>
             <span class="n">correspondance</span> <span class="o">=</span> <span class="n">version_recherche</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">version_info</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">correspondance</span><span class="p">:</span>

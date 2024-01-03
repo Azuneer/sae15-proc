@@ -116,7 +116,7 @@
 <dt class="field-odd">Example<span class="colon">:</span></dt>
 <dd class="field-odd"><p></p></dd>
 </dl>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">interfaces_reseau</span> <span class="o">=</span> <span class="n">obtenir_interfaces_reseau</span><span class="p">(</span><span class="s2">&quot;/proc/net/dev)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">interfaces_reseau</span> <span class="o">=</span> <span class="n">obtenir_interfaces_reseau</span><span class="p">(</span><span class="s2">&quot;/proc/net/dev&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -173,6 +173,44 @@
 <dd class="field-odd"><p></p></dd>
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cpu_infos</span> <span class="o">=</span> <span class="n">extraire_info_cpu</span><span class="p">(</span><span class="s2">&quot;/proc/cpuinfo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-sae15proc.memoire_pie">
+<span id="graphique-cammembert-pour-la-memoire"></span><h2>Graphique cammembert pour la mémoire<a class="headerlink" href="#module-sae15proc.memoire_pie" title="Lien permanent vers cette rubrique">¶</a></h2>
+<span class="target" id="module-memoire_pie"></span><dl class="py function">
+<dt class="sig sig-object py" id="sae15proc.memoire_pie.memoire_pie">
+<span class="sig-prename descclassname"><span class="pre">sae15proc.memoire_pie.</span></span><span class="sig-name descname"><span class="pre">memoire_pie</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sae15proc/memoire_pie.html#memoire_pie"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sae15proc.memoire_pie.memoire_pie" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Fonction qui permets de calculer les pourcentages et de générer le graphique camembert qui est sauvegardé dans le répertoire plots/</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sauvegarde le diagramme d’utilisation de la memoire et le stocke dans le dossier plots/ puis supprime le cache de matplotlib</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">memoire_pie</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-sae15proc.disque_pie">
+<span id="graphique-cammembert-pour-le-disque"></span><h2>Graphique cammembert pour le disque<a class="headerlink" href="#module-sae15proc.disque_pie" title="Lien permanent vers cette rubrique">¶</a></h2>
+<span class="target" id="module-disque_pie"></span><dl class="py function">
+<dt class="sig sig-object py" id="sae15proc.disque_pie.disque_pie">
+<span class="sig-prename descclassname"><span class="pre">sae15proc.disque_pie.</span></span><span class="sig-name descname"><span class="pre">disque_pie</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/sae15proc/disque_pie.html#disque_pie"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sae15proc.disque_pie.disque_pie" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Fonction qui permets de calculer les pourcentages et de générer le graphique camembert qui est sauvegardé dans le répertoire plots/</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sauvegarde le diagramme de l’utilisation du disque dans le dossier plots/ et efface le cache de matplotlib.</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">disque_pie</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>

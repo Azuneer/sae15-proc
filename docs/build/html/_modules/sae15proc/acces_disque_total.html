@@ -66,10 +66,20 @@
             <span class="n">contenu_partitions</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
         <span class="c1">#Utilisation des expressions régulières pour faire correspondre les infos recherchées</span>
-        <span class="n">correspondance</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\s+\d+\s+\d+\s+(\d+)\s+.*&#39;</span><span class="p">,</span> <span class="n">contenu_partitions</span><span class="p">)</span>
+        <span class="n">correspondance</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\s+\d+\s+\d+\s+(\d+)\s+[sh]d[a-z]&#39;</span><span class="p">,</span> <span class="n">contenu_partitions</span><span class="p">)</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        L&#39;expression reguliere est un peu plus longue ici car on veux capturer un pattern &quot;difficile&quot; d&#39;acces</span>
+
+<span class="sd">        On recherche ici un pattern qui correspond a un espace (\s+), un ou des chiffres (\d+), ainsi de suite</span>
+<span class="sd">        jusqu&#39;au premier groupe ou l&#39;on recupere la taille totale qui n&#39;est pas sous une forme lisible.</span>
+
+<span class="sd">        La suite de l&#39;expression reguliere permets de specifier le format exact du disque, ici sois un disque commencant par un &quot;s&quot; ou un &quot;h&quot;,</span>
+<span class="sd">        suivi obligatoirement d&#39;un &quot;d&quot; et suivi d&#39;une lettre de l&#39;alphabet de &quot;a&quot; a &quot;z&quot;. On utilise pas de chiffres ici, car c&#39;est un disque tout entier</span>
+<span class="sd">        que l&#39;on souhaite capturer, et non pas une partition. Ainsi, on recupere EXACTEMENT un disque et non pas un autre peripherique.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="k">if</span> <span class="n">correspondance</span><span class="p">:</span>
-            <span class="n">taille_totale</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">correspondance</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">))</span> <span class="c1">#taille en GB, non arrondie</span>
+            <span class="n">taille_totale</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">correspondance</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#taille en GB, arrondie avec la fonction round()</span>
             <span class="k">return</span> <span class="n">taille_totale</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Impossible de récupérer la taille totale du disque&quot;</span><span class="p">)</span>
@@ -100,7 +110,6 @@
 
 
 <h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Objectif général de la SAÉ</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../content/objectifs.html">Objectifs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../content/code.html">Documentation du code</a></li>

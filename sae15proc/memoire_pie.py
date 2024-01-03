@@ -12,12 +12,12 @@ import matplotlib.pyplot as plt
 def memoire_pie():
     """ Fonction qui permets de calculer les pourcentages et de générer le graphique camembert qui est sauvegardé dans le répertoire plots/
 
-    :returns: affiche le diagramme
+    :returns: sauvegarde le diagramme d'utilisation de la memoire et le stocke dans le dossier plots/ puis supprime le cache de matplotlib
     :example:
 
     .. code-block:: python
 
-    memoire_pie()
+     memoire_pie()
 
     """
     # On calcule les grandeurs en premier lieu

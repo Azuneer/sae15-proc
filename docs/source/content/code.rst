@@ -34,4 +34,14 @@ Module d'accès aux informations CPU
 .. automodule:: sae15proc.acces_cpu
    :members:
 
+Graphique cammembert pour la mémoire
+====================================
 
+.. automodule:: sae15proc.memoire_pie
+   :members:
+
+Graphique cammembert pour le disque
+====================================
+
+.. automodule:: sae15proc.disque_pie
+   :members:

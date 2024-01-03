@@ -55,7 +55,7 @@
 <span class="sd">    </span>
 <span class="sd">    .. code-block:: python</span>
 <span class="sd">     </span>
-<span class="sd">     interfaces_reseau = obtenir_interfaces_reseau(&quot;/proc/net/dev)</span>
+<span class="sd">     interfaces_reseau = obtenir_interfaces_reseau(&quot;/proc/net/dev&quot;)</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">interfaces</span> <span class="o">=</span> <span class="p">[]</span>
@@ -63,10 +63,10 @@
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">chemin_fichier</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="n">network_info</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
-        <span class="n">interfaces_match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\w+):\s+\d+&#39;</span><span class="p">,</span> <span class="n">network_info</span><span class="p">)</span>
+        <span class="n">interfaces_match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\w+):\s+\d+&#39;</span><span class="p">,</span> <span class="n">network_info</span><span class="p">)</span> <span class="c1">#recherche dans l&#39;entree brute un pattern qui commence par un texte suivi de deux points, un espace et des chiffres</span>
 
         <span class="k">for</span> <span class="n">interface</span> <span class="ow">in</span> <span class="n">interfaces_match</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">interface</span> <span class="o">!=</span> <span class="s1">&#39;lo&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">interface</span> <span class="o">!=</span> <span class="s1">&#39;lo&#39;</span><span class="p">:</span> <span class="c1">#exclusion de la loopback, qui nee nous interesse pas ici</span>
                 <span class="n">interfaces</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">interface</span><span class="p">)</span>
 
     <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>

@@ -14,10 +14,11 @@ header {
 	margin-right:10%;
 	padding-bottom:30px;
 	text-align:center;
-	color:grey;
+	color:white;
 	background-color:black;
+	font-weight:bold;
 	font-family:Arial,sans-serif;
-   border-radius:15px;
+	border-radius:15px;
 }
 body h1 {
 	font-size:3em;
@@ -26,6 +27,7 @@ body h1 {
 ------------------------------------------------------------------------*/
 body h3 {
 	font-size:1.5em;
+	text-decoration:underline;
 }
 body h4 {
 	font-size:1em;
